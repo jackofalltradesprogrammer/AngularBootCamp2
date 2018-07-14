@@ -10,6 +10,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ContactComponent } from './contact/contact.component';
 import { DisplayComponent } from './display/display.component';
 import { SquareComponent } from './square/square.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { SquareComponent } from './square/square.component';
     PageNotFoundComponent,
     ContactComponent,
     DisplayComponent,
-    SquareComponent
+    SquareComponent,
+    EmployeeDetailsComponent,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot([
@@ -30,6 +34,7 @@ import { SquareComponent } from './square/square.component';
       {path:'contact', component:ContactComponent},
       {path:'display/:name', component:DisplayComponent},
       {path:'square/:num', component:SquareComponent},
+      {path:'employees', component:EmployeesComponent},
       {path:'', redirectTo: 'home',pathMatch:'full'},
       {path:'**', component:PageNotFoundComponent}
 
