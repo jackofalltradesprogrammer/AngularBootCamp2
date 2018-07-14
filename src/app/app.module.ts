@@ -12,6 +12,7 @@ import { DisplayComponent } from './display/display.component';
 import { SquareComponent } from './square/square.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -35,12 +36,13 @@ import { EmployeesComponent } from './employees/employees.component';
       {path:'display/:name', component:DisplayComponent},
       {path:'square/:num', component:SquareComponent},
       {path:'employees', component:EmployeesComponent},
+      {path:'employee-details/:id', component:EmployeeDetailsComponent},
       {path:'', redirectTo: 'home',pathMatch:'full'},
       {path:'**', component:PageNotFoundComponent}
 
     ])
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
