@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactComponent } from './contact/contact.component';
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +17,16 @@ import { ContactComponent } from './contact/contact.component';
     HomeComponent,
     AboutComponent,
     PageNotFoundComponent,
-    ContactComponent
+    ContactComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot([
       {path:'hr', component:HrComponent},
       {path:'home', component:HomeComponent},
-      {path:'contact', component:ContactComponent},
       {path:'about', component:AboutComponent},
+      {path:'contact', component:ContactComponent},
+      {path:'display/:name', component:DisplayComponent},
       {path:'', redirectTo: 'home',pathMatch:'full'},
       {path:'**', component:PageNotFoundComponent}
 
