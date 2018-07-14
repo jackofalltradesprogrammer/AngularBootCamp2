@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactComponent } from './contact/contact.component';
 import { DisplayComponent } from './display/display.component';
+import { SquareComponent } from './square/square.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DisplayComponent } from './display/display.component';
     AboutComponent,
     PageNotFoundComponent,
     ContactComponent,
-    DisplayComponent
+    DisplayComponent,
+    SquareComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot([
@@ -27,6 +29,7 @@ import { DisplayComponent } from './display/display.component';
       {path:'about', component:AboutComponent},
       {path:'contact', component:ContactComponent},
       {path:'display/:name', component:DisplayComponent},
+      {path:'square/:num', component:SquareComponent},
       {path:'', redirectTo: 'home',pathMatch:'full'},
       {path:'**', component:PageNotFoundComponent}
 
