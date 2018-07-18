@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LogoutComponent implements OnInit {
 
-  constructor() { }
+  uname:string='';
+  msg:string='';
+  constructor() {
+    if (localStorage.getItem('uname') != null){
+      this.uname= localStorage.getItem('uname');
+      this.msg = "Pawan " + this.uname + " , logged out successfully";
+      localStorage.clear(); // Clear session data
+    }
+   }
 
   ngOnInit() {
   }

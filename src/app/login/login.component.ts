@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
   validateUser(user){
     if (this.validateUserFromDataSource(user.uname,user.pwd)){
       // this.msg="Credentials authenticate and found correct";
+      localStorage.setItem('uname', user.uname); // Create session while successful login
       this._router.navigate(["../dashboard"]);
       this.loginStyleClass={"color":"green"};
     }
