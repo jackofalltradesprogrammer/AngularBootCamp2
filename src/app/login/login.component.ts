@@ -7,15 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  users:IUser[]=null;
+
+  constructor() { 
+    this.users= new Array<IUser>(
+      new User("Suhail", "happy"),
+      new User("Pawan", "happy"),
+      new User("Ujjal", "happy"),
+      new User("Ricky", "happy")
+    );
+      
+  }
 
   ngOnInit() {
   }
 
   msg:string="";
   loginStyleClass={};
+  validateUserFromDataSource(uname,pwd){
+    var status:boolean=false;
+    for (let user of this.users){
+      if(user.uname==uname && user.pwd == pwd){
+        status=true;
+        break;
+      }
+    }
+    return status;
+  }
   validateUser(user){
-    if (user.uname == "kiran" && user.pwd=="kumar"){
+    if (this.validateUserFromDataSource(user.uname,user.pwd)){
       this.msg="Credentials authenticate and found correct";
       this.loginStyleClass={"color":"green"};
     }
@@ -25,4 +45,18 @@ export class LoginComponent implements OnInit {
     }
   }
 
+}
+
+interface IUser{
+  uname:string;
+  pwd:string;
+}
+
+class User{
+  uname:string;
+  pwd:string;
+  constructor(uname?:string, pwd?:string){
+    this.uname=uname;
+    this.pwd=pwd;
+  }
 }
