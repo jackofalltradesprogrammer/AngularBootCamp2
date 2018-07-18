@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   users:IUser[]=null;
 
-  constructor() { 
+  constructor(private _router:Router) { 
     this.users= new Array<IUser>(
       new User("Suhail", "happy"),
       new User("Pawan", "happy"),
@@ -36,7 +37,8 @@ export class LoginComponent implements OnInit {
   }
   validateUser(user){
     if (this.validateUserFromDataSource(user.uname,user.pwd)){
-      this.msg="Credentials authenticate and found correct";
+      // this.msg="Credentials authenticate and found correct";
+      this._router.navigate(["../dashboard"]);
       this.loginStyleClass={"color":"green"};
     }
     else{
