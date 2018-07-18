@@ -13,12 +13,16 @@ export class LoginComponent implements OnInit {
   }
 
   msg:string="";
+  loginStyleClass={};
   validateUser(user){
     if (user.uname == "kiran" && user.pwd=="kumar"){
       this.msg="Credentials authenticate and found correct";
+      this.loginStyleClass={"color":"green"};
     }
-    else
+    else{
       this.msg="Invalid Input credentials";
+      this.loginStyleClass={"color":"red"};
+    }
   }
 
 }

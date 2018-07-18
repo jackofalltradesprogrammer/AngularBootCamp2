@@ -1,8 +1,25 @@
-<h2>User Login</h2>
 
 <form #loginForm="ngForm" (ngSubmit) ='validateUser(loginForm.value)'>
-  User Name : <input type="text" name="uname" ngModel> <br>
-  Password  : <input type="password" name='pwd' ngModel> <br>
-  <button type="submit">Login</button>
+  <table border="1">
+    <tr>
+      <td colspan="2">
+        <h2>User Login</h2>
+        
+      </td>
+    </tr>
+    <tr>
+      <td><label for="uname">User Name:</label></td>
+      <td><input type="text" name="uname" ngModel id="uname"></td>
+    </tr>
+    <tr>
+      <td><label for="pwd">Password</label></td>
+      <td><input type="password" name="pwd" ngModel id="pwd"></td>
+    </tr>
+    <tr>
+      <td><button type="submit">Login</button></td>
+      <td><p [ngStyle]="loginStyleClass">{{msg}}</p></td>
+      
+    </tr>
+  </table>
+  
 </form>
-<p>{{msg}}</p>
