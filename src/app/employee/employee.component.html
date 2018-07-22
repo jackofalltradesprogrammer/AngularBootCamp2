@@ -1,0 +1,19 @@
+<p>
+  employee works!
+</p>
+
+<button (click)='getEmployees()'>Show Employees</button>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Ename</th>
+    <th>Job</th>
+    <th>Salary</th>
+  </tr>
+  <tr *ngFor="let e of employees">
+    <td>{{e.Id}}</td>
+    <td>{{e.Ename}}</td>
+    <td>{{e.Job}}</td>
+    <td>{{e.Salary}}</td>
+  </tr>
+</table>
