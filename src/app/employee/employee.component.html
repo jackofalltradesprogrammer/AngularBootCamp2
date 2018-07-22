@@ -16,4 +16,17 @@
     <td>{{e.Job}}</td>
     <td>{{e.Salary}}</td>
   </tr>
+</table><br>
+
+<table border="1">
+  <tr>
+    <td>ID</td>
+    <td><input type="number" [(ngModel)]='x.Id'></td>
+    <td><button (click)='getEmployeeById()'>Search</button></td>
+  </tr>
+  <tr>
+    <td>Ename</td>
+    <td><input type="text" [(ngModel)]='x.Ename'></td>
+    <td><button (click)='addEmployee()'>Add</button></td>
+  </tr>
 </table>

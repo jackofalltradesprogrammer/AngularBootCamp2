@@ -15,5 +15,15 @@ export class EmployeeComponent implements OnInit {
   getEmployees(){
     this.es.getEmployeesFromDB().subscribe(x => this.employees=x);
   }
+  
+  x:any={};
+  getEmployeeById(){
+    this.es.getEmployeeByIdFromDB(this.x.Id).subscribe(x => this.x=x);
+  }
 
+  // addEmployee(){
+  //   this.es.addEmployeeInDB(this.x).subscribe(data => this.x=data.json());
+  //   alert("Row added succesfully");
+  //   this.x={};
+  // }
 }
