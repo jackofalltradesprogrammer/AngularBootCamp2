@@ -8,17 +8,20 @@ import { SampleHttpComponent } from './sample-http/sample-http.component';
 import { SampleHttpService } from './sample-http.service';
 import { JokeComponent } from './joke/joke.component';
 import { JokeService } from './joke.service';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     SampleHttpComponent,
-    JokeComponent
+    JokeComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule
   ],
-  providers: [SampleHttpService, JokeService],
+  providers: [SampleHttpService, JokeService, EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
