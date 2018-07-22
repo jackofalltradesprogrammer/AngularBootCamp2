@@ -14,7 +14,7 @@ export class SampleHttpComponent implements OnInit {
     this._ss.getDateTimeFromWebAPI()
       .subscribe(x =>this.msg = "Date is " + x.date);
   }
-  getTIme(){
+  getTime(){
     this._ss.getDateTimeFromWebAPI()
       .subscribe(x =>this.msg = "Time is " + x.time);
   }

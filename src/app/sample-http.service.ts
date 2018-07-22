@@ -14,7 +14,7 @@ export class SampleHttpService {
   
   getDateTimeFromWebAPI(){
     this._url="http://date.jsontest.com";
-    return this._http.get(this._url).pipe(map(res => res.json()));    
+    return this._http.get(this._url).pipe(map(res => res.json()));  
   }
   
 }
