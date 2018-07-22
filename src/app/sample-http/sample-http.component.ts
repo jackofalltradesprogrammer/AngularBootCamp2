@@ -8,16 +8,15 @@ import { SampleHttpService } from "../sample-http.service";
 export class SampleHttpComponent implements OnInit {
 
   constructor(private _ss:SampleHttpService) { }
-  date:string="";
-  time:string="";
+  msg:string="";
 
   getDate(){
-    this._ss.getDateFromWebAPI()
-      .subscribe(x =>this.date = x.date);
+    this._ss.getDateTimeFromWebAPI()
+      .subscribe(x =>this.msg = "Date is " + x.date);
   }
   getTIme(){
-    this._ss.getDateFromWebAPI()
-      .subscribe(x =>this.time = x.time);
+    this._ss.getDateTimeFromWebAPI()
+      .subscribe(x =>this.msg = "Time is " + x.time);
   }
 
   ngOnInit() {

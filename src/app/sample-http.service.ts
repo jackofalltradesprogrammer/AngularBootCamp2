@@ -12,12 +12,9 @@ export class SampleHttpService {
   }
   private _url:string="";
   
-  getDateFromWebAPI(){
+  getDateTimeFromWebAPI(){
     this._url="http://date.jsontest.com";
     return this._http.get(this._url).pipe(map(res => res.json()));    
   }
-  getTimeFromWebAPI(){
-    this._url="http://date.jsontest.com";
-    return this._http.get(this._url).pipe(map(res => res.json()));    
-  }
+  
 }
