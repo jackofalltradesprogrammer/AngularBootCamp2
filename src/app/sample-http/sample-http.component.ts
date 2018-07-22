@@ -9,10 +9,15 @@ export class SampleHttpComponent implements OnInit {
 
   constructor(private _ss:SampleHttpService) { }
   date:string="";
+  time:string="";
 
   getDate(){
     this._ss.getDateFromWebAPI()
-      .subscribe(x =>this.date = x.value.joke);
+      .subscribe(x =>this.date = x.date);
+  }
+  getTIme(){
+    this._ss.getDateFromWebAPI()
+      .subscribe(x =>this.time = x.time);
   }
 
   ngOnInit() {
